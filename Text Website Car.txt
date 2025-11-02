@@ -1,15 +1,15 @@
 ========== HOME ==========
 .home__title
-Choose The Best Car
+Choose Your Favorite Car
 
 .home__subtitle
-Porsche Mission E
+Porsche Mission B
 
 .home__elec
-Electric car
+Tesla Electric car
 
 .home__car-number | .home__car-name
-24°
+26°
 TEMPERATURE
 
 873
@@ -26,10 +26,10 @@ BATTERY
 Supercharges placed along popular routes
 
 .section__title
-Machines With <br> Future Technology
+Machines With <br> The Best Technology
 
 .about__description
-See the future with high-performance electric cars produced by 
+See the future with high-technology Tesla electric cars produced by 
 renowned brands. They feature futuristic builds and designs with 
 new and innovative platforms that last a long time.
 
@@ -109,22 +109,21 @@ $126,900
 
 ========== OFFER ==========
 .section__title
-Do You Want To Receive <br> Special Offers?
+Wanna Receive <br> Special Offers?
 
 .offer__description
-Be the first to receive all the information about our 
-products and new cars by email by subscribing to our 
-mailing list.
+Please subscribe to our mailing list to email 
+to explore more information about our products.
 
 .button
-Subscribe Now
+Subscribe
 
 ========== FOOTER ==========
 .footer__title
-Elecar
+Eleccar
 
 .footer__description
-We offer the best electric cars of <br> 
+We'll make sure to  offer the best electric cars of <br> 
 the most recognized brands in <br> 
 the world.
 
