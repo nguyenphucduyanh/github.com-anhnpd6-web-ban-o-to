@@ -1,0 +1,860 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    color: white;
+}
+
+.back-home {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Main Container */
+.maintenance-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Service Dashboard */
+.service-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Vehicle Info */
+.vehicle-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-vehicle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+.vehicle-card {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    cursor: move;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.status-success {
+    background: #4CAF5020;
+    color: #4CAF50;
+}
+
+.status-warning {
+    background: #FFA50020;
+    color: #FFA500;
+}
+
+.status-danger {
+    background: #ff4d4d20;
+    color: #ff4d4d;
+}
+
+.vehicle-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.vehicle-details p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.vehicle-details i {
+    color: #ff4d4d;
+    width: 20px;
+    text-align: center;
+}
+
+.service-due {
+    border-left: 4px solid #ff4d4d;
+}
+
+.service-alert {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8em;
+    animation: pulse 2s infinite;
+}
+
+.vehicle-info p {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.vehicle-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.vehicle-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #333;
+    color: white;
+}
+
+/* Calendar */
+.schedule-calendar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-weekday {
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem;
+    color: #666;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.calendar-day:hover {
+    background: #ff4d4d10;
+    transform: scale(1.05);
+}
+
+.calendar-day.today {
+    background: #ff4d4d10;
+    border: 2px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+.calendar-day.has-appointment {
+    background: #4CAF5010;
+    color: #4CAF50;
+}
+
+.appointment-indicator {
+    position: absolute;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.appointment-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 0.7em;
+    background: #4CAF50;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Service History */
+.history-list {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Available Services */
+.maintenance-services {
+    margin-top: 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #ff4d4d;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.service-card .price {
+    font-weight: 600;
+    color: #ff4d4d;
+    margin: 1rem 0;
+}
+
+.book-service-btn {
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.book-service-btn:hover {
+    background: #ff4d4d;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.submit-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.cancel-btn {
+    background: #eee;
+    color: #333;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-width: 400px;
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 4.7s;
+}
+
+.notification.success {
+    background: #4CAF50;
+    color: white;
+}
+
+.notification.error {
+    background: #ff4d4d;
+    color: white;
+}
+
+.notification i {
+    font-size: 1.2em;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.notification button:hover {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .maintenance-container {
+        padding: 0 1rem;
+    }
+
+    .service-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .calendar-day {
+        font-size: 0.9em;
+    }
+
+    .appointment-count {
+        font-size: 0.7em;
+    }
+
+    .vehicle-actions {
+        flex-wrap: wrap;
+    }
+
+    .vehicle-actions button {
+        flex: 1 1 calc(50% - 0.5rem);
+        margin: 0.25rem;
+    }
+
+    .vehicle-details {
+        grid-template-columns: 1fr;
+    }
+
+    .service-recommendations {
+        grid-template-columns: 1fr;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .notification {
+        width: 90%;
+        right: 5%;
+        bottom: 10px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #fff;
+    }
+
+    .vehicle-info,
+    .schedule-calendar,
+    .history-list,
+    .service-card,
+    .modal-content {
+        background: #2a2a2a;
+        color: #fff;
+    }
+
+    .vehicle-card {
+        background: #2a2a2a;
+    }
+
+    .vehicle-details p {
+        color: #999;
+    }
+
+    .recommendation {
+        background: #333;
+        color: #999;
+    }
+
+    .empty-state {
+        background: #2a2a2a;
+    }
+
+    .empty-state i {
+        color: #444;
+    }
+
+    .vehicle-card {
+        background: #333;
+    }
+
+    .calendar-day {
+        background: #333;
+        color: #fff;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: #333;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .cancel-btn {
+        background: #444;
+        color: #fff;
+    }
+
+    .calendar-weekday {
+        color: #999;
+    }
+
+    .appointment-item {
+        background: #333;
+    }
+
+    #serviceType {
+        background: #333;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .vehicle-info p {
+        color: #999;
+    }
+
+    .status-success {
+        background: #4CAF5040;
+    }
+
+    .status-warning {
+        background: #FFA50040;
+    }
+
+    .status-danger {
+        background: #ff4d4d40;
+    }
+
+    .action-btn {
+        background: #333;
+    }
+
+    .calendar-day:hover {
+        background: #333;
+    }
+}
+
+/* Additional Utility Classes */
+.text-danger {
+    color: #ff4d4d;
+}
+
+.text-success {
+    color: #4CAF50;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: #ff4d4d;
+    color: white;
+}
+
+.badge-secondary {
+    background: #666;
+    color: white;
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Appointment Item Styles */
+.appointment-item {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.appointment-item p {
+    margin: 0.5rem 0;
+}
+
+.appointment-item button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Service Type Selection */
+#serviceType {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Modal Styles */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Service Recommendations */
+.service-recommendations {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.recommendation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9em;
+    color: #666;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation i {
+    color: #ff4d4d;
+}
+
+/* Enhanced Action Buttons */
+.action-btn {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.history-btn {
+    background: #4CAF5010;
+    color: #4CAF50;
+}
+
+.schedule-btn {
+    background: #2196F310;
+    color: #2196F3;
+}
+
+.mileage-btn {
+    background: #FFA50010;
+    color: #FFA500;
+}
+
+.delete-btn {
+    background: #ff4d4d10;
+    color: #ff4d4d;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #999;
+}
+
+/* Form Validation */
+.form-group {
+    position: relative;
+}
+
+.field-error {
+    color: #ff4d4d;
+    font-size: 0.8em;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.field-error::before {
+    content: "⚠";
+}
+
+input.error {
+    border-color: #ff4d4d;
+}
+
+/* Loading Overlay */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    color: #ff4d4d;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .vehicle-card {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+    }
+
+    .vehicle-actions,
+    .add-vehicle-btn,
+    .notification,
+    #loadingOverlay {
+        display: none;
+    }
+} 
